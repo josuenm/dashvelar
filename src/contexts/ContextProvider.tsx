@@ -19,6 +19,9 @@ interface ContextProps {
 
   isClicked: InitialStateProps;
   setIsClicked: React.Dispatch<React.SetStateAction<InitialStateProps>>;
+
+  screenSize: number;
+  setScreenSize: React.Dispatch<React.SetStateAction<number>>;
 }
 
 const StateContext = createContext({} as ContextProps);
@@ -33,6 +36,7 @@ const initialState = {
 export const ContextProvider = ({ children }: ProviderProps) => {
   const [activeMenu, setActiveMenu] = useState(true);
   const [isClicked, setIsClicked] = useState(initialState);
+  const [screenSize, setScreenSize] = useState(0);
 
   function handleClick(prop: string) {
     setIsClicked({ ...initialState, [prop]: true });
@@ -46,6 +50,8 @@ export const ContextProvider = ({ children }: ProviderProps) => {
         isClicked,
         setIsClicked,
         handleClick,
+        screenSize,
+        setScreenSize,
       }}
     >
       {children}
