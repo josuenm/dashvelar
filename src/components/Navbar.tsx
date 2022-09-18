@@ -1,6 +1,7 @@
 import Profile from "@assets/profile.jpg";
 import { useStateContext } from "@contexts/ContextProvider";
 import { TooltipComponent } from "@syncfusion/ej2-react-popups";
+import { useEffect } from "react";
 import { AiOutlineMenu } from "react-icons/ai";
 import { BsChatLeft } from "react-icons/bs";
 import { FiShoppingCart } from "react-icons/fi";
@@ -33,16 +34,32 @@ const NavButton = ({
         <span
           className={"absolute inline-flex rounded-full h-2 w-2 right-2 top-2"}
           style={{ backgroundColor: dotColor }}
-        >
-          {icon}
-        </span>
+        />
+        {icon}
       </button>
     </TooltipComponent>
   );
 };
 
 const Navbar = () => {
-  const { setActiveMenu, isClicked, handleClick } = useStateContext();
+  const { setActiveMenu, isClicked, handleClick, screenSize, setScreenSize } =
+    useStateContext();
+
+  useEffect(() => {
+    const handleResize = () => setScreenSize(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+    handleResize();
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  useEffect(() => {
+    if (screenSize <= 900) {
+      setActiveMenu(false);
+    } else {
+      setActiveMenu(true);
+    }
+  }, [screenSize]);
 
   return (
     <nav className="relative flex justify-between p-2 md:mx-6">
