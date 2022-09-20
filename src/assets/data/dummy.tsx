@@ -512,7 +512,7 @@ export const links = [
     title: "Dashboard",
     links: [
       {
-        name: "ecommerce",
+        name: "/",
         icon: <FiShoppingBag />,
       },
     ],
@@ -522,15 +522,15 @@ export const links = [
     title: "Pages",
     links: [
       {
-        name: "orders",
+        name: "/orders",
         icon: <AiOutlineShoppingCart />,
       },
       {
-        name: "employees",
+        name: "/employees",
         icon: <IoMdContacts />,
       },
       {
-        name: "customers",
+        name: "/customers",
         icon: <RiContactsLine />,
       },
     ],
@@ -539,19 +539,19 @@ export const links = [
     title: "Apps",
     links: [
       {
-        name: "calendar",
+        name: "/calendar",
         icon: <AiOutlineCalendar />,
       },
       {
-        name: "kanban",
+        name: "/kanban",
         icon: <BsKanban />,
       },
       {
-        name: "editor",
+        name: "/editor",
         icon: <FiEdit />,
       },
       {
-        name: "color-picker",
+        name: "/color-picker",
         icon: <BiColorFill />,
       },
     ],
@@ -560,36 +560,36 @@ export const links = [
     title: "Charts",
     links: [
       {
-        name: "line",
+        name: "/line",
         icon: <AiOutlineStock />,
       },
       {
-        name: "area",
+        name: "/area",
         icon: <AiOutlineAreaChart />,
       },
 
       {
-        name: "bar",
+        name: "/bar",
         icon: <AiOutlineBarChart />,
       },
       {
-        name: "pie",
+        name: "/pie",
         icon: <FiPieChart />,
       },
       {
-        name: "financial",
+        name: "/financial",
         icon: <RiStockLine />,
       },
       {
-        name: "color-mapping",
+        name: "/color-mapping",
         icon: <BsBarChart />,
       },
       {
-        name: "pyramid",
+        name: "/pyramid",
         icon: <GiLouvrePyramid />,
       },
       {
-        name: "stacked",
+        name: "/stacked",
         icon: <AiOutlineBarChart />,
       },
     ],
