@@ -1,6 +1,5 @@
 import { ordersData, ordersGrid } from "@assets/data/dummy";
 import { Header } from "@components/index";
-import { Inject } from "@syncfusion/ej2-react-charts";
 import {
   ColumnDirective,
   ColumnsDirective,
@@ -9,6 +8,7 @@ import {
   ExcelExport,
   Filter,
   GridComponent,
+  Inject,
   Page,
   PdfExport,
   Resize,
