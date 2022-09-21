@@ -9,9 +9,9 @@ const Sidebar = () => {
   const { activeMenu, setActiveMenu } = useStateContext();
 
   const activeLink =
-    "flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg text-white text-md m-2";
+    "flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg text-[#0047ff] text-md m-2 dark:text-gray-200 dark:hover:text-black hover:bg-light-gray";
   const normalLink =
-    "flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg text-white text-md text-gray-700 dar:text-gray-200 dark:hover:text-black hover:bg-light-gray m-2";
+    "flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg text-white text-md text-gray-700 dark:text-gray-200 dark:hover:text-black hover:bg-light-gray m-2";
 
   const { screenSize } = useStateContext();
 
@@ -49,10 +49,10 @@ const Sidebar = () => {
             {links.map((item) => (
               <li key={item.title}>
                 <p className="text-gray-400 m-3 mt-3 uppercase">{item.title}</p>
-                {item.links.map((link) => (
+                {item.links.map((link, index) => (
                   <NavLink
                     to={`/${link.name}`}
-                    key={link.name}
+                    key={index}
                     onClick={handleCloseSidebar}
                     className={({ isActive }) =>
                       isActive ? activeLink : normalLink
