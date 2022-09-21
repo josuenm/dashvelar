@@ -41,7 +41,7 @@ const SparkLine = ({
       type={type}
       tooltipSettings={{
         visible: true,
-        format: "${x}: data ${y}",
+        format: "${xval}: data ${yval}",
         trackLineSettings: {
           visible: true,
         },
