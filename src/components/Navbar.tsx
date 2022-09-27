@@ -28,7 +28,7 @@ const NavButton = ({
     <TooltipComponent content={title} position="BottomCenter">
       <button
         type="button"
-        className={`relative text-xl rounded-full p-3 hover:bg-light-gray`}
+        className={`relative text-xl rounded-full p-3 hover:bg-light-gray dark:hover:bg-gray-600`}
         style={{ color }}
         onClick={customFunc}
       >
@@ -43,8 +43,14 @@ const NavButton = ({
 };
 
 const Navbar = () => {
-  const { setActiveMenu, isClicked, handleClick, screenSize, setScreenSize } =
-    useStateContext();
+  const {
+    setActiveMenu,
+    isClicked,
+    handleClick,
+    screenSize,
+    setScreenSize,
+    currentColor,
+  } = useStateContext();
 
   useEffect(() => {
     const handleResize = () => setScreenSize(window.innerWidth);
@@ -67,7 +73,7 @@ const Navbar = () => {
       <NavButton
         title="Menu"
         customFunc={() => setActiveMenu((prev) => !prev)}
-        color="#0047ff"
+        color={currentColor}
         icon={<AiOutlineMenu />}
         dotColor=""
       />
@@ -76,28 +82,28 @@ const Navbar = () => {
         <NavButton
           title="Cart"
           customFunc={() => handleClick("cart")}
-          color="#0047ff"
+          color={currentColor}
           icon={<FiShoppingCart />}
           dotColor=""
         />
         <NavButton
           title="Chat"
           customFunc={() => handleClick("chat")}
-          color="#0047ff"
+          color={currentColor}
           icon={<BsChatLeft />}
-          dotColor="#0047ff"
+          dotColor={currentColor}
         />
         <NavButton
           title="Notification"
           customFunc={() => handleClick("notification")}
-          color="#0047ff"
+          color={currentColor}
           icon={<RiNotification2Line />}
-          dotColor="#0047ff"
+          dotColor={currentColor}
         />
 
         <TooltipComponent content="Profile" position="BottomCenter">
           <div
-            className="flex items-center gap-2 cursor-pointer p-1 hover:bg-light-gray rounded-lg"
+            className="flex items-center gap-2 cursor-pointer p-1 hover:bg-light-gray dark:hover:bg-gray-600 rounded-lg"
             onClick={() => handleClick("userProfile")}
           >
             <img
@@ -106,8 +112,10 @@ const Navbar = () => {
               className="w-8 h-8 rounded-full"
             />
             <p>
-              <span className="text-gray-400 text-14">Hi,</span>{" "}
-              <span className="text-gray-400 text-14 font-bold ml-1">
+              <span className="text-gray-400 dark:text-gray-300 text-14">
+                Hi,
+              </span>{" "}
+              <span className="text-gray-400 dark:text-gray-300 text-14 font-bold ml-1">
                 Josué
               </span>
             </p>
