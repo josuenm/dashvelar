@@ -6,12 +6,12 @@ import { SiShopware } from "react-icons/si";
 import { Link, NavLink } from "react-router-dom";
 
 const Sidebar = () => {
-  const { activeMenu, setActiveMenu } = useStateContext();
+  const { activeMenu, setActiveMenu, currentColor } = useStateContext();
 
   const activeLink =
-    "flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg bg-[#0047ff] text-white text-md duration-300 hover:opacity-80 m-2 dark:text-gray-200";
+    "flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg text-white text-md duration-300 hover:opacity-80 m-2 dark:text-gray-200";
   const normalLink =
-    "flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg text-white text-md duration-300 text-gray-700 dark:text-gray-200 dark:hover:text-black hover:bg-light-gray m-2";
+    "flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg text-white text-md duration-300 text-gray-700 dark:text-gray-200 dark:hover:bg-gray-600 hover:bg-light-gray m-2";
 
   const { screenSize } = useStateContext();
 
@@ -38,9 +38,9 @@ const Sidebar = () => {
               <button
                 type="button"
                 onClick={() => setActiveMenu((prev) => !prev)}
-                className="text-xl rounded-full p-3 hover:bg-light-gray mt-4 block"
+                className="text-xl rounded-full p-3 hover:bg-light-gray dark:hover:bg-gray-600 mt-4 block"
               >
-                <IoMdClose />
+                <IoMdClose className="dark:text-white" />
               </button>
             </TooltipComponent>
           </div>
@@ -56,6 +56,9 @@ const Sidebar = () => {
                     onClick={handleCloseSidebar}
                     className={({ isActive }) =>
                       isActive ? activeLink : normalLink
+                    }
+                    style={({ isActive }) =>
+                      isActive ? { backgroundColor: currentColor } : {}
                     }
                   >
                     {link.icon}
