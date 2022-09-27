@@ -1,15 +1,20 @@
 import { earningData, SparklineAreaData } from "@assets/data/dummy";
 import { Button, SparkLine, Stacked } from "@components/index";
+import { useStateContext } from "@contexts/ContextProvider";
 import { GoPrimitiveDot } from "react-icons/go";
 
 const Ecommerce = () => {
+  const { currentColor } = useStateContext();
+
   return (
-    <main className="my-12 lg:max-w-5xl mx-auto">
+    <main className="h-screen my-12 lg:max-w-5xl mx-auto">
       <div className="flex flex-col flex-wrap lg:flex-nowrap justify-center">
         <div className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg h-44 rounded-xl w-fit-content p-8 py-9 m-3 bg-hero-pattern bg-no-repat bg-cover bg-center">
           <div className="flex justify-between items-center">
             <div>
-              <p className="font-bold text-gray-400">Earnings</p>
+              <p className="font-bold text-gray-400 dark:text-gray-400">
+                Earnings
+              </p>
               <p className="text-2xl">
                 {Intl.NumberFormat("en-US", {
                   style: "currency",
@@ -23,7 +28,7 @@ const Ecommerce = () => {
           <div className="mt-6">
             <Button
               color="white"
-              bgColor="blue"
+              bgColor={currentColor}
               title="Download"
               borderRadius="10px"
               size="md"
@@ -50,7 +55,9 @@ const Ecommerce = () => {
                   {item.percentage}
                 </span>
               </p>
-              <p className="text-sm text-gray-400 mt-1">{item.title}</p>
+              <p className="text-sm text-gray-400 mt-1 dark:text-gray-300">
+                {item.title}
+              </p>
             </div>
           ))}
         </div>
@@ -65,7 +72,7 @@ const Ecommerce = () => {
                 <span>
                   <GoPrimitiveDot />
                 </span>
-                <span>Expense</span>
+                <span className="dark:text-gray-300">Expense</span>
               </p>
               <p className="flex items-center gap-2 text-green-400 hover:drop-shadow-xl">
                 <span>
@@ -109,20 +116,20 @@ const Ecommerce = () => {
 
               <div className="mt-5">
                 <SparkLine
-                  currentColor="#0047ff"
+                  currentColor={currentColor}
                   id="line-sparkline"
                   type="Line"
                   height="80px"
                   width="250px"
                   data={SparklineAreaData}
-                  color="#0047ff"
+                  color={currentColor}
                 />
               </div>
 
               <div className="mt-10">
                 <Button
                   color="white"
-                  bgColor="#0047ff"
+                  bgColor={currentColor}
                   title="Download Report"
                   borderRadius="10px"
                 />

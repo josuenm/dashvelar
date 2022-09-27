@@ -12,7 +12,7 @@ import {
 
 const Employees = () => {
   return (
-    <main className="my-12 p-2 md:p-10 lg:max-w-5xl mx-auto bg-white rounded-3xl">
+    <main className="min-h-screen my-12 p-2 md:p-10 lg:max-w-5xl mx-auto bg-white rounded-3xl">
       <Header category="Page" title="Employees" />
 
       <GridComponent
