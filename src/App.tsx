@@ -2,9 +2,7 @@ import { Navbar, Sidebar, ThemeSettings } from "@components/index";
 import { useStateContext } from "@contexts/ContextProvider";
 import {
   Area,
-  Bar,
   Calendar,
-  ColorMapping,
   ColorPicker,
   Customers,
   Ecommerce,
@@ -14,8 +12,6 @@ import {
   Kanban,
   Line,
   Orders,
-  Pie,
-  Pyramid,
   Stacked,
 } from "@pages/index";
 import { TooltipComponent } from "@syncfusion/ej2-react-popups";
@@ -89,11 +85,7 @@ const App = () => {
                 {/* Charts */}
                 <Route path="/line" element={<Line />} />
                 <Route path="/area" element={<Area />} />
-                <Route path="/bar" element={<Bar />} />
-                <Route path="/pie" element={<Pie />} />
                 <Route path="/financial" element={<Financial />} />
-                <Route path="/color-mapping" element={<ColorMapping />} />
-                <Route path="/pyramid" element={<Pyramid />} />
                 <Route path="/stacked" element={<Stacked />} />
               </Routes>
             </div>
