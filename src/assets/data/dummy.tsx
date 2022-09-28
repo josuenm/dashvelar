@@ -1,13 +1,11 @@
 import {
   AiOutlineAreaChart,
-  AiOutlineBarChart,
   AiOutlineCalendar,
   AiOutlineShoppingCart,
   AiOutlineStock,
 } from "react-icons/ai";
 import { BiColorFill } from "react-icons/bi";
 import {
-  BsBarChart,
   BsBoxSeam,
   BsChatLeft,
   BsCurrencyDollar,
@@ -18,17 +16,15 @@ import {
   FiBarChart,
   FiCreditCard,
   FiEdit,
-  FiPieChart,
   FiShoppingBag,
   FiShoppingCart,
   FiStar,
 } from "react-icons/fi";
-import { GiLouvrePyramid } from "react-icons/gi";
 import { GrLocation } from "react-icons/gr";
 import { HiOutlineRefresh } from "react-icons/hi";
 import { IoMdContacts } from "react-icons/io";
 import { MdOutlineSupervisorAccount } from "react-icons/md";
-import { RiContactsLine, RiStockLine } from "react-icons/ri";
+import { RiContactsLine } from "react-icons/ri";
 import { TiTick } from "react-icons/ti";
 import avatar from "./avatar.jpg";
 import avatar2 from "./avatar2.jpg";
@@ -162,7 +158,7 @@ const customerGridStatus = (props: any) => (
     <p>{props.Status}</p>
   </div>
 );
-export const areaPrimaryXAxis = {
+export const AreaPrimaryXAxis = {
   valueType: "DateTime",
   labelFormat: "y",
   majorGridLines: { width: 0 },
@@ -171,7 +167,7 @@ export const areaPrimaryXAxis = {
   labelStyle: { color: "gray" },
 };
 
-export const areaPrimaryYAxis = {
+export const AreaPrimaryYAxis = {
   labelFormat: "{value}%",
   lineStyle: { width: 0 },
   maximum: 4,
@@ -179,17 +175,6 @@ export const areaPrimaryYAxis = {
   majorTickLines: { width: 0 },
   minorTickLines: { width: 0 },
   labelStyle: { color: "gray" },
-};
-export const barPrimaryXAxis = {
-  valueType: "Category",
-  interval: 1,
-  majorGridLines: { width: 0 },
-};
-export const barPrimaryYAxis = {
-  majorGridLines: { width: 0 },
-  majorTickLines: { width: 0 },
-  lineStyle: { width: 0 },
-  labelStyle: { color: "transparent" },
 };
 const areaChartData = [
   [
@@ -260,68 +245,6 @@ export const areaCustomSeries = [
   },
 ];
 
-export const barChartData = [
-  [
-    { x: "USA", y: 46 },
-    { x: "GBR", y: 27 },
-    { x: "CHN", y: 26 },
-  ],
-  [
-    { x: "USA", y: 37 },
-    { x: "GBR", y: 23 },
-    { x: "CHN", y: 18 },
-  ],
-  [
-    { x: "USA", y: 38 },
-    { x: "GBR", y: 17 },
-    { x: "CHN", y: 26 },
-  ],
-];
-
-export const barCustomSeries = [
-  {
-    dataSource: barChartData[0],
-    xName: "x",
-    yName: "y",
-    name: "Gold",
-    type: "Column",
-    marker: {
-      dataLabel: {
-        visible: true,
-        position: "Top",
-        font: { fontWeight: "600", color: "#ffffff" },
-      },
-    },
-  },
-  {
-    dataSource: barChartData[1],
-    xName: "x",
-    yName: "y",
-    name: "Silver",
-    type: "Column",
-    marker: {
-      dataLabel: {
-        visible: true,
-        position: "Top",
-        font: { fontWeight: "600", color: "#ffffff" },
-      },
-    },
-  },
-  {
-    dataSource: barChartData[2],
-    xName: "x",
-    yName: "y",
-    name: "Bronze",
-    type: "Column",
-    marker: {
-      dataLabel: {
-        visible: true,
-        position: "Top",
-        font: { fontWeight: "600", color: "#ffffff" },
-      },
-    },
-  },
-];
 export const colorMappingData = [
   [
     { x: "Jan", y: 6.96 },
@@ -566,31 +489,6 @@ export const links = [
       {
         name: "area",
         icon: <AiOutlineAreaChart />,
-      },
-
-      {
-        name: "bar",
-        icon: <AiOutlineBarChart />,
-      },
-      {
-        name: "pie",
-        icon: <FiPieChart />,
-      },
-      {
-        name: "financial",
-        icon: <RiStockLine />,
-      },
-      {
-        name: "color-mapping",
-        icon: <BsBarChart />,
-      },
-      {
-        name: "pyramid",
-        icon: <GiLouvrePyramid />,
-      },
-      {
-        name: "stacked",
-        icon: <AiOutlineBarChart />,
       },
     ],
   },
@@ -2993,16 +2891,6 @@ export const lineCustomSeries = [
     marker: { visible: true, width: 10, height: 10 },
     type: "Line",
   },
-];
-
-export const pieChartData = [
-  { x: "Labour", y: 18, text: "18%" },
-  { x: "Legal", y: 8, text: "8%" },
-  { x: "Production", y: 15, text: "15%" },
-  { x: "License", y: 11, text: "11%" },
-  { x: "Facilities", y: 18, text: "18%" },
-  { x: "Taxes", y: 14, text: "14%" },
-  { x: "Insurance", y: 16, text: "16%" },
 ];
 
 export const contextMenuItems = [
@@ -5737,12 +5625,4 @@ export const financialChartData = [
     close: 158.67,
     volume: 27939544,
   },
-];
-export const PyramidData = [
-  { x: "Sweet Treats", y: 120, text: "120 cal" },
-  { x: "Milk, Youghnut, Cheese", y: 435, text: "435 cal" },
-  { x: "Vegetables", y: 470, text: "470 cal" },
-  { x: "Meat, Poultry, Fish", y: 475, text: "475 cal" },
-  { x: "Fruits", y: 520, text: "520 cal" },
-  { x: "Bread, Rice, Pasta", y: 930, text: "930 cal" },
 ];
